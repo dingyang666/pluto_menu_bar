@@ -237,14 +237,16 @@ class _MenuWidgetState extends State<_MenuWidget> {
               child: PhysicalModel(
                 color: widget.backgroundColor,
                 elevation: 2.0,
-                child: MouseRegion(
-                  onHover: onHover,
-                  onExit: onExit,
-                  child: IntrinsicWidth(
-                    child: SingleChildScrollView(
-                      child: Column(
-                        mainAxisSize: MainAxisSize.min,
-                        children: menuItemWidgets,
+                child: PointerInterceptor(
+                  child: MouseRegion(
+                    onHover: onHover,
+                    onExit: onExit,
+                    child: IntrinsicWidth(
+                      child: SingleChildScrollView(
+                        child: Column(
+                          mainAxisSize: MainAxisSize.min,
+                          children: menuItemWidgets,
+                        ),
                       ),
                     ),
                   ),
