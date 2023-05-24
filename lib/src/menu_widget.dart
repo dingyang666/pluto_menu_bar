@@ -410,7 +410,9 @@ class _MenuWidgetState extends State<_MenuWidget> {
             ),
             SizedBox(width: 5),
           ],
-          Text(widget.menu.title, style: textStyle),
+          Expanded(child: Text(widget.menu.title, style: textStyle)),
+          if (widget.menu.hasChildren)
+            Icon(Icons.arrow_right, color: Colors.black54),
         ],
       ),
     );
