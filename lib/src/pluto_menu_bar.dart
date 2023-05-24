@@ -126,6 +126,19 @@ class _PlutoMenuBarState extends State<PlutoMenuBar> {
                 scrollDirection: widget.direction,
                 itemCount: widget.menus.length,
                 itemBuilder: (_, index) {
+                  if (widget.menus[index].type.isDivider) {
+                    return widget.direction == Axis.horizontal
+                        ? VerticalDivider(
+                            width: 1,
+                            thickness: 1,
+                            color: widget.borderColor,
+                          )
+                        : Divider(
+                            height: 1,
+                            thickness: 1,
+                            color: widget.borderColor,
+                          );
+                  }
                   return _MenuWidget(
                     widget.menus[index],
                     goBackButtonText: widget.goBackButtonText,

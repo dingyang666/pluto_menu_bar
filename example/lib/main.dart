@@ -155,6 +155,7 @@ class _PlutoMenuBarDemoState extends State<PlutoMenuBarDemo> {
           ),
         ],
       ),
+      PlutoMenuItem.divider(height: 10),
       PlutoMenuItem(
         title: 'Menu 2',
         icon: Icons.add_circle,
@@ -165,6 +166,7 @@ class _PlutoMenuBarDemoState extends State<PlutoMenuBarDemo> {
           ),
         ],
       ),
+      PlutoMenuItem.divider(height: 10),
       PlutoMenuItem(
         title: 'Menu 3',
         icon: Icons.apps_outlined,
