@@ -139,7 +139,7 @@ class _PlutoMenuBarState extends State<PlutoMenuBar> {
                             color: widget.borderColor,
                           );
                   }
-                  return _MenuWidget(
+                  final tmp = _MenuWidget(
                     widget.menus[index],
                     goBackButtonText: widget.goBackButtonText,
                     showBackButton: widget.showBackButton,
@@ -151,6 +151,15 @@ class _PlutoMenuBarState extends State<PlutoMenuBar> {
                     selectedMenuKey: _selectedMenuKey,
                     setSelectedMenuKey: _setSelectedMenuKey,
                   );
+                  if (widget.menus[index].onTap != null) {
+                    return InkWell(
+                      onTap: () {
+                        widget.menus[index].onTap!();
+                      },
+                      child: tmp,
+                    );
+                  }
+                  return tmp;
                 },
               ),
             ),
